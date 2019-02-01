@@ -43,7 +43,6 @@ int main() {
 
 	while(myInput != "0" && myInput != "O"){
 
-
 		cout << "Welcome to Roman Number Conversion!" << endl;
 		cout << "Please enter a value to convert: " ;
 		cin >> myInput;
@@ -122,10 +121,8 @@ string convertRomanToDecimal(string roman){
 			break;
 		}
 	}
-
 	return std::to_string(myDecimal);							// cast it to a string and return the decimal. I know its not cast but again I think of it that way.
 }
-
 
 string convertDecimalToRoman(string s){
 	int localNumber = 0;			// my local number to work upon
@@ -134,6 +131,7 @@ string convertDecimalToRoman(string s){
 	stringstream mynumber(s); 		// setup to convert the string to a "real" number
 	mynumber >> localNumber;        // store the integer in my local variable
 
+  // This looks ok on non-windwers machines.
 	// This whole section seams like there should be a shorter way, I just can't come up with it.
 	while(localNumber > 999999){	// This is the millions
 		romanReturn += "M\u0305";
@@ -237,6 +235,4 @@ string convertDecimalToRoman(string s){
 	}
 	return romanReturn;				// send that Roman numeral back to main... or from whence it came.
 }
-
-
 
